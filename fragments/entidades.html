@@ -6,14 +6,14 @@
     	<div class="row mb-2">
 	      <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item" ng-repeat="entidade in vm.entidades">
 	        <div class="card h-100">
-	          <a ng-href="#!/entidades/{{ entidade.id }}">
-	          	<img class="card-img-top" src="{{ entidade.images[0] }}" alt="{{entidade.nome}}">
+	          <a ng-href="#!/entidades/{{ entidade._id }}">
+	          	<img class="card-img-top" src="http://placehold.it/500x300" alt="{{entidade.name}}">
 	          </a>
 	          <div class="card-body">
 	            <h4 class="card-title">
-	              <a ng-href="#!/entidades/{{entidade.id}}">{{entidade.nome}}</a>
+	              <a ng-href="#!/entidades/{{entidade._id}}">{{entidade.name}}</a>
 	            </h4>
-	            <p class="card-text">{{entidade.descricao}}</p>
+	            <p class="card-text">{{entidade.description}}</p>
 	          </div>
 	        </div>
 	      </div>
