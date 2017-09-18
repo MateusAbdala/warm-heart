@@ -43,7 +43,7 @@
   app.directive('barranavegacao', function() {
       return {
         restrict: 'E',
-        templateUrl: '../directive/barranavegacao.html'
+        templateUrl: './directive/barranavegacao.html'
       }
     });
 
@@ -53,13 +53,6 @@
       templateUrl: './directive/rodape.html'
     };
   }); 
-
-  app.directive('signin', function() {
-    return {
-      restrict: 'E',
-      templateUrl: '../directive/signin.html'
-    }
-  });
 
   //MOCKING - TEMP-----------------------------------------------------------
   var filt = [{
