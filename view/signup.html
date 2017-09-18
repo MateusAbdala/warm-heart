@@ -1,48 +1,68 @@
-<!DOCTYPE html>
-<html lang="en" ng-app="warm" >
-
-  <head>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="author" content="Mateus Abdala">
-    <meta name="description" content="">
-
-    <title>Entidades - Listagem</title>
-
-    <!-- Angular JS -->
-    <script src="../lib/angularjs/angular.min.js"></script>
-    <script src="../module/app.js"></script>
-    <script src="../directive/dir.js"></script>
-
-    <!-- Bootstrap core CSS -->
-    <link href="../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="../lib/css-custom/4-col-portfolio.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-<link href="../lib/css-custom/signstyle.css" rel="stylesheet">
-
-    <!-- Font-Awesome for icon -->
-    <link rel="stylesheet" href="../lib/font-awesome-4.7.0/css/font-awesome.min.css">
-
-  </head>
-
-  <body>
-    {{'angular'+' funcionando'}} 
-    <barranavegacao></barranavegacao>
-    <!--<div ng-include="'../directive/barranavegacao.html'"></div>-->
-
-    <signin></signin>
-
-    <rodape></rodape>
-
-    <!-- Bootstrap core JavaScript (colocado no final a pagina carrega mais rapido)-->
-    <script src="../lib/jquery/jquery.min.js"></script>
-    <script src="../lib/popper/popper.min.js"></script>
-    <script src="../lib/bootstrap/js/bootstrap.min.js"></script>
-
-  </body>
-
-</html>
+<section class="py-5 mt-5" ng-controller="SignUpController">
+    <div class="container">
+        <div class="form-box">
+            <div class="form-top">
+                <div class="form-top-left">
+                    <h3>Cadastre-se agora!</h3>
+                    <p>Preencha o formulário abaixo:</p>
+                </div>
+                <div class="form-top-right">
+                    <i class="fa fa-pencil"></i>
+                </div>
+            </div>
+            <div class="form-bottom">
+                <form name="form" ng-submit="signup()" role="form">
+                    <div class="form-group">
+                        <label class="sr-only" for="form-first-name">Username</label>
+                        <input type="text" name="username" placeholder="Username..." class="form-control" ng-model="username" required>
+                        <div class="help-block" ng-show="form.username.$dirty && form.username.$error.required">
+                            <div class="alert alert-danger mt-1" ng-message="required">Username is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="sr-only" for="form-first-name">Primeiro nome</label>
+                        <input type="text" name="firstName" placeholder="Primeiro nome..." class="form-control" ng-model="firstName" required>
+                        <div class="help-block" ng-show="form.firstName.$dirty && form.firstName.$error.required">
+                            <div class="alert alert-danger mt-1" ng-message="required">First name is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="sr-only" for="form-first-name">Ultimo nome</label>
+                        <input type="text" name="lastName" placeholder="Ultimo nome..." class="form-control" ng-model="lastName" required>
+                        <div class="help-block" ng-show="form.lastName.$dirty && form.lastName.$error.required">
+                            <div class="alert alert-danger mt-1" ng-message="required">Last name is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="sr-only" for="form-first-name">Email</label>
+                        <input type="email" name="email" placeholder="email" class="form-control" ng-model="email" required>
+                        <div class="help-block" ng-show="form.email.$dirty && form.email.$error.required">
+                            <div class="alert alert-danger mt-1" ng-message="required">Email is required</div>
+                        </div>
+                    </div>
+                    <!--senha-->
+                    <div class="form-group">
+                        <label class="sr-only" for="form-first-name">Senha</label>
+                        <input type="password" name="password" placeholder="Senha" class="form-control" ng-model="password" required>
+                        <div class="help-block" ng-show="form.password.$dirty && form.password.$error.required">
+                            <div class="alert alert-danger mt-1" ng-message="required">Password is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="sr-only" for="form-first-name">Senha</label>
+                        <input type="password" name="password2" placeholder="Repita a Senha" class="form-control" ng-model="password2" required>
+                        <div class="help-block" ng-show="form.password2.$dirty && form.password2.$error.required">
+                            <div class="alert alert-danger mt-1" ng-message="required">Password is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" ng-disabled="form.$invalid || dataLoading" class="btn btn-primary">Cadastre-me!</button>
+                        <img ng-if="dataLoading" src="../images/loading.gif" />
+                        <a href="#!">Cancelar</a>
+                    </div>
+                    <div ng-show="error" class="alert alert-danger">{{error}}</div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
