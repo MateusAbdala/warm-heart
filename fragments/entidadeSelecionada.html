@@ -1,8 +1,8 @@
-<section class="py-5 mt-5" ng-controller="EntidadeController as vm">
+<section class="py-5 mt-5">
   <div class="container">
   	 <!-- Portfolio Item Heading -->
-    <h1 class="my-4">Titulo
-      <small>Subtitulo</small>
+    <h1 class="my-4">{{ entidade.name }}
+      <small>({{ entidade.type }})</small>
     </h1>
 
     <!-- Portfolio Item Row -->
@@ -14,13 +14,13 @@
 
       <div class="col-md-4">
         <h3 class="my-3">Descrição</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae. Sed dui lorem, adipiscing in adipiscing et, interdum nec metus. Mauris ultricies, justo eu convallis placerat, felis enim.</p>
+        <p>{{ entidade.description }}</p>
         <h3 class="my-3">Detalhes</h3>
         <ul>
-          <li>Lorem Ipsum</li>
-          <li>Dolor Sit Amet</li>
-          <li>Consectetur</li>
-          <li>Adipiscing Elit</li>
+          <li>Diretor: {{ entidade.director }}</li>
+          <li>Email: {{ entidade.email }}</li>
+          <li>Telefone: {{ entidade.phone }}</li>
+          <li>Endereco: {{ entidade.postal_address }}, {{ entidade.city }}, {{ entidade.state }}</li>
         </ul>
       </div>
 

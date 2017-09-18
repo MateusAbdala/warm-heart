@@ -26,11 +26,13 @@
       .when('/entidades', {
         module: 'Entidade',
         controller: 'EntidadeController',
+        controllerAs: 'vm',
         templateUrl: fragmentsBase + '/entidades.html'
       })
       .when('/entidades/:id', {
         module: 'Entidade',
         controller: 'EntidadeController',
+        controllerAs: 'vm',
         templateUrl: fragmentsBase + '/entidadeSelecionada.html'
       })
   }]);

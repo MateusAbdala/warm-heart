@@ -11,5 +11,9 @@ angular.module('Entidade')
         	return $http.get(urlBase);
     		};
 
+    		service.GetDetails = function (id) {
+        	return $http.get(urlBase + "/" + id);
+    		};
+
         return service;
     }])
