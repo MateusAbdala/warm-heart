@@ -28,6 +28,11 @@
         controller: 'EntidadeController',
         templateUrl: fragmentsBase + '/entidades.html'
       })
+      .when('/entidades/:id', {
+        module: 'Entidade',
+        controller: 'EntidadeController',
+        templateUrl: fragmentsBase + '/entidadeSelecionada.html'
+      })
   }]);
   
   //DIRECTIVES--------------------------------------------------------------

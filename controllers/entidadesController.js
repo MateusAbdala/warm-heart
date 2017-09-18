@@ -12,6 +12,7 @@ angular.module('Entidade', [])
       nome: 'São Paulo'
   }];
   var ent = [{
+    id: 'ent001',
     nome: 'Criança Esperança',
     descricao: "Criança Esperança é um projeto da Rede Globo em parceria com a UNESCO - Órgão das Nações Unidas para a Educação, a Ciência e a Cultura.",
     images: [
@@ -29,6 +30,7 @@ angular.module('Entidade', [])
       createdOn: 1397490980837
     }]
   }, {
+    id: 'ent002',
     nome: 'Teleton',
     descricao: "Teleton é uma maratona televisiva brasileira anualmente exibida pelo SBT em prol da Associação de Assistência à Criança Deficiente.",
     images: [
