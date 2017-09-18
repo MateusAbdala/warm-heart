@@ -1,16 +1,6 @@
 (function() {
   var app = angular.module('warmheart', ["ngRoute", "Authentication", "Home", "Entidade"]);
 
-  //CONTROLLERS--------------------------------------------------------------
-
-  app.controller('GalleryController', function() {
-    this.imageIndex = 0;
-    this.setCurrent = function(imageNumber) {
-      console.log(imageNumber);
-      this.imageIndex = imageNumber || 0;
-    };
-  });
-
   //CONFIG ROUTES-----------------------------------------------------------
   app.config(['$routeProvider', function ($routeProvider) {
     var fragmentsBase = '../fragments';
