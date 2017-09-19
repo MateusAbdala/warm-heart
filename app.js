@@ -5,9 +5,6 @@
   app.config(['$routeProvider', function ($routeProvider) {
     var fragmentsBase = '../fragments';
     $routeProvider
-      .when('/', {
-        templateUrl : fragmentsBase + '/home.html'
-      })
       .when('/login', {
         module: 'Authentication',
         controller: 'LoginController',
@@ -34,6 +31,8 @@
         controller: 'EntidadeController',
         controllerAs: 'vm',
         templateUrl: fragmentsBase + '/entidadeSelecionada.html'
+      }).otherwise({
+        templateUrl : fragmentsBase + '/home.html'
       })
   }]);
   
