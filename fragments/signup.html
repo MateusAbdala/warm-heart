@@ -13,31 +13,31 @@
             <div class="form-bottom">
                 <form name="form" ng-submit="signup()" role="form">
                     <div class="form-group">
-                        <label class="sr-only" for="form-first-name">Username</label>
-                        <input type="text" name="username" placeholder="Username..." class="form-control" ng-model="username" required>
+                        <label class="sr-only" for="form-first-name">Usuário</label>
+                        <input type="text" name="username" placeholder="Usuário..." class="form-control" ng-model="username" required>
                         <div class="help-block" ng-show="form.username.$dirty && form.username.$error.required">
-                            <div class="alert alert-danger mt-1" ng-message="required">Username is required</div>
+                            <div class="alert alert-danger mt-1" ng-message="required">Usuário é necessário</div>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="sr-only" for="form-first-name">Primeiro nome</label>
                         <input type="text" name="firstName" placeholder="Primeiro nome..." class="form-control" ng-model="firstName" required>
                         <div class="help-block" ng-show="form.firstName.$dirty && form.firstName.$error.required">
-                            <div class="alert alert-danger mt-1" ng-message="required">First name is required</div>
+                            <div class="alert alert-danger mt-1" ng-message="required">First name é necessário</div>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="sr-only" for="form-first-name">Ultimo nome</label>
                         <input type="text" name="lastName" placeholder="Ultimo nome..." class="form-control" ng-model="lastName" required>
                         <div class="help-block" ng-show="form.lastName.$dirty && form.lastName.$error.required">
-                            <div class="alert alert-danger mt-1" ng-message="required">Last name is required</div>
+                            <div class="alert alert-danger mt-1" ng-message="required">Last name é necessário</div>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="sr-only" for="form-first-name">Email</label>
                         <input type="email" name="email" placeholder="email" class="form-control" ng-model="email" required>
                         <div class="help-block" ng-show="form.email.$dirty && form.email.$error.required">
-                            <div class="alert alert-danger mt-1" ng-message="required">Email is required</div>
+                            <div class="alert alert-danger mt-1" ng-message="required">Email é necessário</div>
                         </div>
                     </div>
                     <!--senha-->
@@ -45,14 +45,14 @@
                         <label class="sr-only" for="form-first-name">Senha</label>
                         <input type="password" name="password" placeholder="Senha" class="form-control" ng-model="password" required>
                         <div class="help-block" ng-show="form.password.$dirty && form.password.$error.required">
-                            <div class="alert alert-danger mt-1" ng-message="required">Password is required</div>
+                            <div class="alert alert-danger mt-1" ng-message="required">Senha é necessária</div>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="sr-only" for="form-first-name">Senha</label>
                         <input type="password" name="password2" placeholder="Repita a Senha" class="form-control" ng-model="password2" required>
                         <div class="help-block" ng-show="form.password2.$dirty && form.password2.$error.required">
-                            <div class="alert alert-danger mt-1" ng-message="required">Password is required</div>
+                            <div class="alert alert-danger mt-1" ng-message="required">Senha é necessária</div>
                         </div>
                     </div>
                     <div class="form-group">

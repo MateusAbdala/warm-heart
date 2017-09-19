@@ -4,23 +4,23 @@
             <h2>Login</h2>
             <form name="form" ng-submit="login()" role="form">
                 <div class="form-group">
-                    <label for="username">Username</label>
+                    <label for="username">Usuário</label>
                     <i class="fa fa-key"></i>
                     <input type="text" name="username" class="form-control" ng-model="username" required />
                     <div class="help-block" ng-show="form.username.$dirty && form.username.$error.required">
-                        <div ng-message="required">Username is required</div>
+                        <div ng-message="required">Usuário é necessário</div>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="password">Password</label>
+                    <label for="password">Senha</label>
                     <i class="fa fa-lock"></i>
                     <input type="password" name="password" class="form-control" ng-model="password" required />
                     <div class="help-block" ng-show="form.password.$dirty && form.password.$error.required">
-                        <div ng-message="required">Password is required</div>
+                        <div ng-message="required">Senha é necessária</div>
                     </div>
                 </div>
                 <div class="form-group">
-                    <button type="submit" ng-disabled="form.$invalid || dataLoading" class="btn">Login</button>
+                    <button type="submit" ng-disabled="form.$invalid || dataLoading" class="btn btn-primary">Login</button>
                     <img ng-if="dataLoading" src="../images/loading.gif" />
                     <a href="#!signup">Cadastre-se agora!</a>
                 </div>
