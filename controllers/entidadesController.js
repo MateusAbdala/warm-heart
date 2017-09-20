@@ -1,21 +1,34 @@
 angular.module('Entidade', [])
 
-	.controller('EntidadeController', ['$scope', 'EntidadeClient', '$routeParams',
-    function($scope, EntidadeClient, $routeParams) {
+.controller('EntidadeController', ['$scope', 'EntidadeClient', '$routeParams', 'PagerService',
+function($scope, EntidadeClient, $routeParams, PagerService) {
     var vm = this;
+    vm.pager = {};
+    vm.setPage = setPage;
+    $scope.pageSize = 8;
 
-    if(!$routeParams.id){
-      EntidadeClient.GetAllEntities().then(function (response) {
-          vm.entidades = response.data;
-      }, function (error) {
-          console.log('Unable to load entities: ' + error.message);
-      });
+    if($routeParams.id){
+        EntidadeClient.GetDetails($routeParams.id).then(function (response) {
+            $scope.entidade = response.data[0];
+        }, function (error) {
+            console.log('Unable to load entity details: ' + error.message);
+        });
     } else {
-      EntidadeClient.GetDetails($routeParams.id).then(function (response) {
-          $scope.entidade = response.data[0];
-      }, function (error) {
-          console.log('Unable to load entity details: ' + error.message);
-      });
+        EntidadeClient.GetAllEntities().then(function (response) {
+            vm.entidades = response.data;
+            vm.items = vm.entidades;
+            vm.pager = PagerService.GetPager(vm.entidades.length, 1, 8);
+        }, function (error) {
+            console.log('Unable to load entities: ' + error.message);
+        });
+    }    
+
+    function setPage(page) {
+        if (page < 1 || page > vm.pager.totalPages) {
+            return;
+        }
+        vm.pager = PagerService.GetPager(vm.entidades.length, page);
+        vm.items = vm.entidades.slice(vm.pager.startIndex, vm.pager.endIndex + 1);
     }
 
-  }]);
+}]);
