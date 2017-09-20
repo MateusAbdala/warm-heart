@@ -11,7 +11,7 @@ angular.module('Authentication')
                     'Content-Type':'application/x-www-form-urlencoded; charset=UTF-8'
                 },
                 method: 'POST',
-                url: 'http://52.15.61.162/api/authenticate',
+                url: 'http://52.15.61.162/service/api/authenticate',
                 data: { 
                     name: username, 
                     password: password 
