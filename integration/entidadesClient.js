@@ -4,7 +4,7 @@ angular.module('Entidade')
     ['$http', '$rootScope', '$timeout', '$window',
     function ($http, $rootScope, $timeout, $window) {
         
-        var urlBase = 'http://localhost:8081/api/entity';
+        var urlBase = 'http://52.15.61.162/entity-service/entity';
         var service = {};
 
         service.GetAllEntities = function () {
