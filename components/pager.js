@@ -3,26 +3,26 @@ angular.module('warmheart')
 .service('PagerService', function() {
     var service = {};
 
-    service.GetPager = function(totalItems, currentPage, pageSize){
+    service.GetPager = function(totalItems, currentPage, visiblePages, pageSize ){
         currentPage = currentPage || 1;
         pageSize = pageSize || 8;
 
         var totalPages = Math.ceil(totalItems / pageSize);
 
         var startPage, endPage;
-        if (totalPages <= 10) {
+        if (totalPages <= visiblePages) {
             startPage = 1;
             endPage = totalPages;
         } else {
-            if (currentPage <= 6) {
+            if (currentPage <= (visiblePages - 2)) {
                 startPage = 1;
-                endPage = 10;
-            } else if (currentPage + 4 >= totalPages) {
-                startPage = totalPages - 9;
+                endPage = visiblePages;
+            } else if (currentPage + 2 >= totalPages) {
+                startPage = totalPages - 7;
                 endPage = totalPages;
             } else {
                 startPage = currentPage - 5;
-                endPage = currentPage + 4;
+                endPage = currentPage + 2;
             }
         }
 
