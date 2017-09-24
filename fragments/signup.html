@@ -11,9 +11,9 @@
                 </div>
             </div>
             <div class="form-bottom">
-                <form name="form" ng-submit="signup()" role="form">
+                <form name="myForm" ng-submit="signup()" role="form">
                     <div class="form-group">
-                        <label class="sr-only" for="form-first-name">Usuário</label>
+                        <label class="sr-only" for="form-username">Usuário</label>
                         <input type="text" name="username" placeholder="Usuário..." class="form-control" ng-model="username" required>
                         <div class="help-block" ng-show="form.username.$dirty && form.username.$error.required">
                             <div class="alert alert-danger mt-1" ng-message="required">Usuário é necessário</div>
@@ -27,14 +27,14 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="sr-only" for="form-first-name">Ultimo nome</label>
+                        <label class="sr-only" for="form-last-name">Ultimo nome</label>
                         <input type="text" name="lastName" placeholder="Ultimo nome..." class="form-control" ng-model="lastName" required>
                         <div class="help-block" ng-show="form.lastName.$dirty && form.lastName.$error.required">
                             <div class="alert alert-danger mt-1" ng-message="required">Last name é necessário</div>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="sr-only" for="form-first-name">Email</label>
+                        <label class="sr-only" for="form-email">Email</label>
                         <input type="email" name="email" placeholder="email" class="form-control" ng-model="email" required>
                         <div class="help-block" ng-show="form.email.$dirty && form.email.$error.required">
                             <div class="alert alert-danger mt-1" ng-message="required">Email é necessário</div>
@@ -42,21 +42,49 @@
                     </div>
                     <!--senha-->
                     <div class="form-group">
-                        <label class="sr-only" for="form-first-name">Senha</label>
+                        <label class="sr-only" for="form-password">Senha</label>
                         <input type="password" name="password" placeholder="Senha" class="form-control" ng-model="password" required>
                         <div class="help-block" ng-show="form.password.$dirty && form.password.$error.required">
                             <div class="alert alert-danger mt-1" ng-message="required">Senha é necessária</div>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="sr-only" for="form-first-name">Senha</label>
+                        <label class="sr-only" for="form-repeat-password">Senha</label>
                         <input type="password" name="password2" placeholder="Repita a Senha" class="form-control" ng-model="password2" required>
                         <div class="help-block" ng-show="form.password2.$dirty && form.password2.$error.required">
                             <div class="alert alert-danger mt-1" ng-message="required">Senha é necessária</div>
                         </div>
                     </div>
+                    <!--checkbox-->
+                    <div class="checkbox">
+                        <input type="checkbox" ng-model="representa">Eu represento uma entidade!
+                    </div>
+                    <h2 ng-show="representa">Dados da Entidade:</h2>
+                    <!--inputs para entidade-->
+                    <div class="form-group" ng-show="representa">
+                        <label class="sr-only" for="form-razao">Razão Social</label>
+                        <input type="text" name="rsocial" placeholder="Razão Social..." class="form-control" ng-model="rsocial" ng-required="representa">
+                        <div class="help-block" ng-show="form.rsocial.$dirty && form.rsocial.$error.required">
+                            <div class="alert alert-danger mt-1" ng-message="required">Razão Social é necessária</div>
+                        </div>
+                    </div>
+                    <div class="form-group" ng-show="representa">
+                        <label class="sr-only" for="form-fantasia">Nome Fantasia</label>
+                        <input type="text" name="nomefantasia" placeholder="Nome Fantasia..." class="form-control" ng-model="nomefantasia" ng-required="representa">
+                        <div class="help-block" ng-show="form.rsocial.$dirty && form.rsocial.$error.required">
+                            <div class="alert alert-danger mt-1" ng-message="required">Nome Fantasia é necessário</div>
+                        </div>
+                    </div>
+                    <div class="form-group" ng-show="representa">
+                        <label class="sr-only" for="form-fantasia">CNPJ</label>
+                        <input type="text" name="cnpj" placeholder="CNPJ..." class="form-control" ng-model="cnpj" ng-required="representa">
+                        <div class="help-block" ng-show="form.rsocial.$dirty && form.rsocial.$error.required">
+                            <div class="alert alert-danger mt-1" ng-message="required">CNPJ é necessário</div>
+                        </div>
+                    </div>
+
                     <div class="form-group">
-                        <button type="submit" ng-disabled="form.$invalid || dataLoading" class="btn btn-primary">Cadastre-me!</button>
+                        <button type="submit" ng-disabled="myForm.$invalid || dataLoading" class="btn btn-primary">Cadastre-me!</button>
                         <img ng-if="dataLoading" src="../images/loading.gif" />
                         <a href="#!">Cancelar</a>
                     </div>
