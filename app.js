@@ -1,3 +1,3 @@
 (function() {
-  angular.module('warmheart', ["ngRoute", "Authentication", "Home", "Entidade"]);
+  angular.module('warmheart', ["ngRoute", "ngMask", "Authentication", "Home", "Entidade"]);
 })();

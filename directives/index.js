@@ -1,11 +1,11 @@
 angular.module('warmheart')
 
 .directive('barranavegacao', function() {
-    return {
-      restrict: 'E',
-      templateUrl: './fragments/barranavegacao.html'
-    }
-  })
+  return {
+    restrict: 'E',
+    templateUrl: './fragments/barranavegacao.html'
+  };
+})
 
 .directive('rodape', function(){
   return {
