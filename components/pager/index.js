@@ -43,6 +43,5 @@ angular.module('warmheart')
             pages: pages
         };
     };
-    return service;
-    
+    return service;    
 });
