@@ -119,6 +119,7 @@
                                     ng-model="CNPJ" 
                                     ng-required="representa"
                                     mask="99.999.999/9999-99"
+                                    onpaste="return false;"
                                     />
                                 <div class="help-block" ng-show="form.rsocial.$dirty && form.rsocial.$error.required">
                                     <div class="alert alert-danger mt-1" ng-message="required">CNPJ é necessário</div>
