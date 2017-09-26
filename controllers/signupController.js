@@ -1,8 +1,25 @@
 angular.module('Authentication')
 
 	.controller('SignUpController',
-		['$rootScope', '$scope', '$timeout', '$location', 'SignUpClient', 'AuthenticationClient',
-		function ($rootScope, $scope, $timeout, $location, SignUpClient, AuthenticationClient) {
+		['$rootScope', '$scope', '$timeout', '$location', '$http', 'SignUpClient', 'AuthenticationClient',
+		function ($rootScope, $scope, $timeout, $location, $http, SignUpClient, AuthenticationClient) {
+
+			$scope.estados = null;
+			$scope.cidades = null;			
+			$http({
+				method: 'GET',
+				url: '../lib/estados-cidades.json'
+			}).then(function successCallback(response) {
+                $scope.estados = response.data.estados;
+            }, function errorCallback(response) {
+				console.log('Could not load estados from JSON file');
+			});
+			
+			$scope.$watch('selectedState', function(newVal, oldVal){
+				if($scope.selectedState){
+					$scope.cidades = $scope.selectedState.cidades;
+				}
+			});
 
 			$scope.handleTabs = function (selectedTab) {
 				if(selectedTab.id == 'tabUsuario'){
@@ -10,7 +27,7 @@ angular.module('Authentication')
 				} else if (selectedTab.id == 'tabEntidade'){
 					$scope.tabEntidadeSelected = true;
 				}
-			}
+			};
 
 			$scope.signup = function () {
 				$scope.dataLoading = true;
