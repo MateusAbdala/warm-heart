@@ -1,7 +1,25 @@
 angular.module('Entidade', [])
 
-.controller('EntidadeController', ['$scope', 'EntidadeClient', '$routeParams', 'PagerService',
-function($scope, EntidadeClient, $routeParams, PagerService) {
+.controller('EntidadeController', ['$scope', 'EntidadeClient', '$routeParams', 'PagerService','$http',
+function($scope, EntidadeClient, $routeParams, PagerService, $http) {
+
+    $scope.estados = null;
+    $scope.cidades = null;			
+    $http({
+        method: 'GET',
+        url: '../lib/estados-cidades.json'
+    }).then(function successCallback(response) {
+        $scope.estados = response.data.estados;
+    }, function errorCallback(response) {
+        console.log('Could not load estados from JSON file');
+    });
+    
+    $scope.$watch('selectedState', function(newVal, oldVal){
+        if($scope.selectedState){
+            $scope.cidades = $scope.selectedState.cidades;
+        }
+    });
+
     var vm = this;
     vm.pager = {};
     vm.setPage = setPage;
