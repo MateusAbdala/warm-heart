@@ -1,31 +1,29 @@
 <div ng-controller="HomeController">
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="#"><img class="logo" src="./images/logo.png" alt="Warm Heart">Warm Heart</a>
+      <a class="navbar-brand" href="#" ng-click="page.setPage(1)"><img class="logo" src="./images/logo.png" alt="Warm Heart">Warm Heart</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home
-              <span class="sr-only">(current)</span>
-            </a>
+          <li class="nav-item" ng-class="{ active:page.isSet(1) }">
+            <a class="nav-link" href="#" ng-click="page.setPage(1)">Home</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#!entidades">Entidades</a>
+          <li class="nav-item" ng-class="{ active:page.isSet(2) }">
+            <a class="nav-link" href="#!entidades" ng-click="page.setPage(2)">Entidades</a>
           </li>
-          <li class="nav-item">
-              <a class="nav-link" href="#!doe">Doe</a>
+          <li class="nav-item" ng-class="{ active:page.isSet(3) }">
+              <a class="nav-link" href="#!doe" ng-click="page.setPage(3)">Doe</a>
           </li>
-          <li ng-show="userLoggedIn" class="nav-item">
-              <a class="nav-link" href="#!doe">Relatorios</a>
+          <li ng-show="userLoggedIn" class="nav-item" ng-class="{ active:page.isSet(4) }">
+              <a class="nav-link" href="#!doe" ng-click="page.setPage(4)">Relatorios</a>
           </li>
-          <li ng-show="userLoggedIn" class="nav-item">
-              <a class="nav-link" href="#!doe">Doacoes Recebidas</a>
+          <li ng-show="userLoggedIn" class="nav-item" ng-class="{ active:page.isSet(5) }">
+              <a class="nav-link" href="#!doe" ng-click="page.setPage(5)">Doacoes Recebidas</a>
           </li>
-          <li ng-hide="userLoggedIn" class="nav-item">
-            <a class="nav-link" href="#!contato">Contato</a>
+          <li ng-hide="userLoggedIn" class="nav-item" ng-class="{ active:page.isSet(6) }">
+            <a class="nav-link" href="#!contato" ng-click="page.setPage(6)">Contato</a>
           </li>    
         </ul>
       </div>
