@@ -26,6 +26,13 @@ angular.module('warmheart')
   };
 })
 
+.directive('pesquisaentidade', function(){
+  return {
+    restrict: 'E',
+    templateUrl: './fragments/pesquisaentidade.html'
+  };
+})
+
 .directive('pager', function(){
   return {
     restrict: 'E',

@@ -1,35 +1,7 @@
 <section class="py-5 mt-5">
   <div class="container">
 	  <h1 class="my-4">Entidades</h1>
-	  <div class="pull-right">
-			<div class="btn-group">
-				<button type="button" class="btn btn-success" data-target="verificadas">Vericadas</button>
-				<button type="button" class="btn btn-danger" data-target="naoverificadas">Não Vericadas</button>
-				<button type="button" class="btn btn-default" data-target="all">Todos</button>
-			</div>
-		</div>
-	  <div class="row">
-		<div class="form-group">
-			<label class="sr-only" for="form-estado">Estado</label>
-			<select 
-				name="estado"
-				ng-model="selectedState" 
-				ng-options="estado.nome for estado in estados"
-				class="form-control" >
-				<option value="" disabled selected>Estado</option>
-			</select>
-		</div>
-		<div class="form-group" ng-show="selectedState">
-			<label class="sr-only" for="form-cidade">Cidade</label>
-			<select 
-				name="cidade"
-				ng-model="selectedCity" 
-				ng-options="cidade for cidade in cidades"
-				class="form-control" >
-				<option value="" disabled selected>Cidade</option>
-			</select>
-		</div>
-	  </div>
+	  <pesquisaentidade></pesquisaentidade>
 		<pager></pager>
 		<div class="row mb-2">
 			<div class="col-lg-3 col-md-4 col-sm-6 portfolio-item mt-3" 
